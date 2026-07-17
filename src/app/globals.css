@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand Colors ── */
+  --color-navy:        #20233B;
+  --color-navy-dark:   #151829;
+  --color-navy-light:  #2d3356;
+  --color-navy-muted:  #3d4175;
+  --color-gold:        #F4B400;
+  --color-gold-light:  #FFD54F;
+  --color-gold-dark:   #C49200;
+  --color-cream:       #FAF8F3;
+  --color-cream-dark:  #F0EBE1;
+
+  /* ── Typography ── */
+  --font-sans:    var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  background-color: #FAF8F3;
+  color: #20233B;
+  overflow-x: hidden;
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid #F4B400;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: rgba(244, 180, 0, 0.25);
+  color: #20233B;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FAF8F3; }
+::-webkit-scrollbar-thumb { background: #F4B400; border-radius: 10px; }
+
+/* ── Custom Utilities ── */
+.glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-white {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-navy {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(32, 35, 59, 0.75);
+  border: 1px solid rgba(244, 180, 0, 0.2);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F4B400 0%, #FFD54F 50%, #F4B400 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-navy {
+  background: linear-gradient(135deg, #20233B 0%, #2d3356 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-gold {
+  box-shadow: 0 0 40px rgba(244, 180, 0, 0.35), 0 0 80px rgba(244, 180, 0, 0.15);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 20px rgba(244, 180, 0, 0.3);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 24px rgba(32, 35, 59, 0.06), 0 1px 4px rgba(32, 35, 59, 0.04);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 16px 48px rgba(32, 35, 59, 0.14), 0 4px 12px rgba(32, 35, 59, 0.08);
+}
+
+.shadow-gold {
+  box-shadow: 0 8px 32px rgba(244, 180, 0, 0.25);
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* ── Chess board pattern ── */
+.chess-pattern {
+  background-image:
+    repeating-conic-gradient(rgba(244, 180, 0, 0.06) 0% 25%, transparent 0% 50%);
+  background-size: 40px 40px;
+}
+
+.chess-pattern-dark {
+  background-image:
+    repeating-conic-gradient(rgba(255,255,255, 0.04) 0% 25%, transparent 0% 50%);
+  background-size: 48px 48px;
+}
+
+/* ── Floating animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(3deg); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(244,180,0,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(244,180,0,0.6); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.animate-float     { animation: float     3s ease-in-out infinite; }
+.animate-float-slow{ animation: floatSlow 4s ease-in-out infinite; }
+.animate-pulse-gold{ animation: pulse-gold 2s ease-in-out infinite; }
+
+/* ── Gradient backgrounds ── */
+.bg-hero-gradient {
+  background: radial-gradient(ellipse at 70% 20%, rgba(32,35,59,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 10% 90%, rgba(244,180,0,0.05) 0%, transparent 50%),
+              #FAF8F3;
+}
+
+.bg-navy-gradient {
+  background: linear-gradient(135deg, #151829 0%, #20233B 50%, #2d3356 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C49200 0%, #F4B400 50%, #FFD54F 100%);
+}

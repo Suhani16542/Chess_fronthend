@@ -1,0 +1,82 @@
+/*
+ * styles/variables.css
+ * ─────────────────────────────────────────────
+ * CSS custom properties (design tokens).
+ * These act as the single source of truth for the design system.
+ * Import this in globals.css.
+ */
+
+:root {
+  /* ── Typography ── */
+  --font-sans:  var(--font-inter), system-ui, sans-serif;
+  --font-mono:  "Fira Code", "Cascadia Code", monospace;
+
+  /* ── Colors (HSL channels — use with oklch or rgb()) ── */
+  /* Primary — deep amber/gold (chess theme) */
+  --color-primary:       220 38 20;   /* placeholder — customise in theme */
+  --color-primary-fg:    0 0 100;
+
+  /* Accent */
+  --color-accent:        45 96 60;
+  --color-accent-fg:     0 0 8;
+
+  /* Neutral */
+  --color-background:    0 0 100;
+  --color-foreground:    240 10 4;
+  --color-muted:         240 5 65;
+  --color-muted-fg:      240 4 46;
+  --color-border:        240 6 90;
+  --color-card:          0 0 100;
+  --color-card-fg:       240 10 4;
+
+  /* ── Spacing scale ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* ── Border radius ── */
+  --radius-sm:  0.375rem;
+  --radius-md:  0.625rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.08);
+  --shadow-md:  0 4px 12px 0 rgb(0 0 0 / 0.12);
+  --shadow-lg:  0 8px 32px 0 rgb(0 0 0 / 0.16);
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow:   500ms ease;
+
+  /* ── Z-index scale ── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background:  240 10 4;
+    --color-foreground:  0 0 98;
+    --color-muted:       240 4 16;
+    --color-muted-fg:    240 5 65;
+    --color-border:      240 4 16;
+    --color-card:        240 10 6;
+    --color-card-fg:     0 0 98;
+  }
+}
