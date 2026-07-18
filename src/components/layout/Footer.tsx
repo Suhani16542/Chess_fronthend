@@ -133,19 +133,19 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <a href="mailto:hello@chessmasteracademy.in" className="text-white/55 hover:text-white transition-colors text-sm">
-                  hello@chessmasteracademy.in
+                <a href="mailto:Sadasivam.maker@gmail.com" className="text-white/55 hover:text-white transition-colors text-sm">
+                  Sadasivam.maker@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <a href="tel:+919876543210" className="text-white/55 hover:text-white transition-colors text-sm">
-                  +91 98765 43210
+                <a href="tel:+917358328783" className="text-white/55 hover:text-white transition-colors text-sm">
+                  +91 7358328783
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                <span className="text-white/55 text-sm">Mumbai, Maharashtra, India</span>
+                <span className="text-white/55 text-sm">Andhra Pradesh, India</span>
               </li>
             </ul>
           </div>
