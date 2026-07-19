@@ -7,17 +7,27 @@ import { submitDemoBooking } from "@/lib/api";
 const LEVELS = ["Beginner", "Intermediate", "Advanced"];
 const TIMES = ["Morning (7am–11am)", "Afternoon (12pm–4pm)", "Evening (5pm–8pm)", "Weekend"];
 
+const normalizeIndianMobile = (value: string) => {
+  const digitsOnly = value.replace(/\D/g, "");
+  const withoutCountryCode = digitsOnly.startsWith("91") ? digitsOnly.slice(2) : digitsOnly;
+  const compactDigits = withoutCountryCode.slice(0, 10);
+  return compactDigits ? `+91${compactDigits}` : "+91";
+};
+
+const isValidIndianMobile = (value: string) => /^\+91[6-9]\d{9}$/.test(value);
+
 export default function BookDemo() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [showPhoneValidation, setShowPhoneValidation] = useState(false);
   const [form, setForm] = useState({
     studentName: "",
     parentName: "",
     email: "",
-    phone: "",
+    phone: "+91",
     age: "",
     city: "",
     chessExperience: "",
@@ -30,12 +40,22 @@ export default function BookDemo() {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setErrorMessage(null);
+    setShowPhoneValidation(true);
+    setForm((f) => ({ ...f, phone: normalizeIndianMobile(e.target.value) }));
+  };
+
+  const handlePhoneFocus = () => {
+    setShowPhoneValidation(true);
+  };
+
   const resetForm = () => {
     setForm({
       studentName: "",
       parentName: "",
       email: "",
-      phone: "",
+      phone: "+91",
       age: "",
       city: "",
       chessExperience: "",
@@ -50,6 +70,13 @@ export default function BookDemo() {
     setErrorMessage(null);
 
     try {
+      if (!isValidIndianMobile(form.phone)) {
+        setShowPhoneValidation(true);
+        setErrorMessage("Please enter a valid 10-digit Indian mobile number starting with 6–9.");
+        setIsSubmitting(false);
+        return;
+      }
+
       const payload = {
         studentName: form.studentName,
         parentName: form.parentName,
@@ -174,7 +201,23 @@ export default function BookDemo() {
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-xs font-semibold uppercase tracking-[0.2em] text-navy/70" htmlFor="phone">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" required placeholder="Phone number" value={form.phone} onChange={handleChange} className={inputClass} disabled={isSubmitting} />
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          required
+                          maxLength={13}
+                          inputMode="numeric"
+                          placeholder="+91 98765 43210"
+                          value={form.phone}
+                          onChange={handlePhoneChange}
+                          onFocus={handlePhoneFocus}
+                          className={inputClass}
+                          disabled={isSubmitting}
+                        />
+                        {showPhoneValidation && !isValidIndianMobile(form.phone) && (
+                          <p className="text-[11px] text-gold">Use a valid 10-digit Indian mobile number starting with 6–9.</p>
+                        )}
                       </div>
                     </div>
 

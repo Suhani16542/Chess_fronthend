@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { MessageCircle } from "lucide-react";
 import "./globals.css";
 
 const inter = Inter({
@@ -63,7 +64,18 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <a
+          href="https://wa.me/7358328783?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20courses."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with Chess Class on WhatsApp"
+          className="fixed bottom-4 right-4 z-[300] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_35px_rgba(37,211,102,0.35)] transition-transform duration-200 hover:scale-105 hover:shadow-[0_16px_45px_rgba(37,211,102,0.4)] sm:bottom-6 sm:right-6 sm:h-16 sm:w-16"
+        >
+          <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
+        </a>
+      </body>
     </html>
   );
 }
