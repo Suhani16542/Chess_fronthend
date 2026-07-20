@@ -44,8 +44,8 @@ export default function LearningJourney() {
                   {/* Card */}
                   <div className={`${!isRight ? "md:col-start-2" : ""}`}>
                     <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="glass-navy rounded-2xl p-6 border border-gold/15 hover:border-gold/30 transition-colors duration-300"
+                      whileHover={{ y: -6, scale: 1.02, boxShadow: "0 16px 40px rgba(244, 180, 0, 0.2)" }}
+                      className="glass-navy rounded-2xl p-6 border border-gold/15 hover:border-gold/30 transition-all duration-300"
                     >
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center shrink-0 text-2xl">

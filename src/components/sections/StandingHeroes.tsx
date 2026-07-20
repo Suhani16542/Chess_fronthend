@@ -60,7 +60,8 @@ export default function StandingHeroes() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-3xl border border-cream-dark bg-white p-7 shadow-card hover:shadow-card-hover transition-shadow duration-300"
+                whileHover={{ y: -8, scale: 1.015, boxShadow: "0 16px 48px rgba(244, 180, 0, 0.15)" }}
+                className="rounded-3xl border border-cream-dark bg-white p-7 shadow-card transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-2xl bg-gold/12 text-gold flex items-center justify-center mb-5">
                   <Icon className="w-5 h-5" />

@@ -30,7 +30,7 @@ export default function CoachCards() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.65, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -8, scale: 1.015, boxShadow: "0 16px 48px rgba(244, 180, 0, 0.15)" }}
               className="group bg-white rounded-3xl overflow-hidden shadow-card border border-cream-dark hover:shadow-card-hover transition-all duration-300"
             >
               {/* Avatar area */}
@@ -43,7 +43,7 @@ export default function CoachCards() {
 
                 {/* Avatar circle */}
                 <div
-                  className="relative z-10 w-24 h-24 rounded-full flex items-center justify-center text-3xl font-display font-black text-white shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
+                  className="relative z-10 w-24 h-24 rounded-full flex items-center justify-center text-3xl font-display font-black text-white shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-transform duration-300 group-hover:scale-105"
                   style={{ background: `linear-gradient(135deg, ${coach.color}, ${coach.color}bb)` }}
                 >
                   {coach.initials}

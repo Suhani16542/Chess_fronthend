@@ -6,11 +6,10 @@ import CoachProfile    from "@/components/sections/CoachProfile";
 import TrustedBy       from "@/components/sections/TrustedBy";
 import WhyChooseUs     from "@/components/sections/WhyChooseUs";
 import LearningBenefits from "@/components/sections/LearningBenefits";
-import CourseCards     from "@/components/sections/CourseCards";
 import LearningJourney from "@/components/sections/LearningJourney";
 import CoachCards      from "@/components/sections/CoachCards";
 import Testimonials    from "@/components/sections/Testimonials";
-import Pricing         from "@/components/sections/Pricing";
+import SuccessStories  from "@/components/sections/SuccessStories";
 import StandingHeroes  from "@/components/sections/StandingHeroes";
 import FAQ             from "@/components/sections/FAQ";
 import FinalCTA        from "@/components/sections/FinalCTA";
@@ -38,9 +37,6 @@ export default function HomePage() {
         {/* 6 — Learning Benefits */}
         <LearningBenefits />
 
-        {/* 7 — Programs */}
-        <CourseCards />
-
         {/* 8 — Learning Journey */}
         <LearningJourney />
 
@@ -50,8 +46,8 @@ export default function HomePage() {
         {/* 10 — Student Success Stories */}
         <Testimonials />
 
-        {/* 11 — Pricing Plans */}
-        <Pricing />
+        {/* 11 — Real Student Wins */}
+        <SuccessStories />
 
         {/* 12 — Standing Heroes */}
         <StandingHeroes />

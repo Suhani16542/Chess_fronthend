@@ -25,7 +25,10 @@ export default function LearningBenefits() {
             className="relative"
           >
             {/* Main card */}
-            <div className="relative bg-navy-gradient rounded-3xl p-10 text-white overflow-hidden shadow-[0_24px_80px_rgba(32,35,59,0.3)]">
+            <motion.div
+              whileHover={{ y: -8, scale: 1.01, boxShadow: "0 24px 80px rgba(244, 180, 0, 0.25)" }}
+              className="relative bg-navy-gradient rounded-3xl p-10 text-white overflow-hidden shadow-[0_24px_80px_rgba(32,35,59,0.3)] transition-all duration-300"
+            >
               <div className="absolute inset-0 chess-pattern-dark" />
 
               {/* Glows */}
@@ -57,7 +60,7 @@ export default function LearningBenefits() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Floating accent */}
             <motion.div

@@ -5,13 +5,13 @@ import { ChevronDown, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { FAQ_ITEMS } from "@/lib/constants";
 
-function FAQItem({ item, index }: { item: typeof FAQ_ITEMS[number]; index: number }) {
+function FAQItem({ item, index, inView }: { item: typeof FAQ_ITEMS[number]; index: number; inView: boolean }) {
   const [open, setOpen] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.07 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: index * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
         open ? "border-gold/25 shadow-gold-sm bg-white" : "border-cream-dark bg-white hover:border-navy/15"
       }`}
@@ -76,7 +76,7 @@ export default function FAQ() {
           className="flex flex-col gap-4"
         >
           {FAQ_ITEMS.map((item, i) => (
-            <FAQItem key={item.question} item={item} index={i} />
+            <FAQItem key={item.question} item={item} index={i} inView={inView} />
           ))}
         </motion.div>
 
@@ -96,8 +96,8 @@ export default function FAQ() {
             </p>
             <motion.a
               href="mailto:hello@chessmasteracademy.in"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gold text-navy font-bold text-sm shadow-gold"
-              whileHover={{ scale: 1.04 }}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gold text-navy font-bold text-sm shadow-gold transition-all duration-300"
+              whileHover={{ scale: 1.04, boxShadow: "0 12px 36px rgba(244, 180, 0, 0.4)" }}
               whileTap={{ scale: 0.97 }}
             >
               Contact Our Team

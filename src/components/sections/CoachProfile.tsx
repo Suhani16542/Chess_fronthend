@@ -102,7 +102,8 @@ export default function CoachProfile() {
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.08 }}
-            className="rounded-4xl border border-cream-dark bg-cream p-6 sm:p-8 shadow-card"
+            whileHover={{ y: -8, boxShadow: "0 24px 80px rgba(244, 180, 0, 0.15)" }}
+            className="group rounded-4xl border border-cream-dark bg-cream p-6 sm:p-8 shadow-card transition-all duration-300"
           >
             <div className="flex flex-col items-center text-center">
               <div className="relative mb-6 w-full max-w-76">
@@ -111,7 +112,7 @@ export default function CoachProfile() {
                   <img
                     src="/image.png"
                     alt="Professional portrait of Sada Sivam K"
-                    className="h-64 w-full rounded-3xl object-cover object-center sm:h-72 lg:h-80"
+                    className="h-64 w-full rounded-3xl object-cover object-center sm:h-72 lg:h-80 transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               </div>
@@ -127,7 +128,7 @@ export default function CoachProfile() {
                   <a
                     key={label}
                     href={href}
-                    className="flex items-center gap-3 rounded-2xl border border-cream-dark bg-white/80 px-4 py-3 text-sm text-navy transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/30 hover:shadow-card"
+                    className="flex items-center gap-3 rounded-2xl border border-cream-dark bg-white/80 px-4 py-3 text-sm text-navy transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:border-gold/30 hover:shadow-[0_12px_24px_rgba(244, 180, 0, 0.15)]"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/12 text-gold">
                       <Icon className="h-4.5 w-4.5" />
@@ -145,7 +146,7 @@ export default function CoachProfile() {
             transition={{ duration: 0.7, delay: 0.12 }}
             className="space-y-6"
           >
-            <div className="rounded-4xl border border-cream-dark bg-white p-6 sm:p-8 shadow-card">
+            <div className="rounded-4xl border border-cream-dark bg-white p-6 sm:p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-gold/20">
               <div className="flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-gold/10 px-3.5 py-2 text-sm font-semibold text-navy">
                   <Briefcase className="h-4 w-4 text-gold" /> 7+ Years Experience
@@ -175,7 +176,7 @@ export default function CoachProfile() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-cream-dark bg-white p-6 sm:p-8 shadow-card">
+            <div className="rounded-4xl border border-cream-dark bg-white p-6 sm:p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-gold/20">
               <div className="flex items-center gap-2 text-lg font-semibold text-navy">
                 <CalendarRange className="h-5 w-5 text-gold" /> Coaching Timeline
               </div>
@@ -199,7 +200,7 @@ export default function CoachProfile() {
             </div>
 
             <div className="grid gap-6 xl:grid-cols-2">
-              <div className="rounded-4xl border border-cream-dark bg-white p-6 shadow-card">
+              <div className="rounded-4xl border border-cream-dark bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-gold/20">
                 <div className="flex items-center gap-2 text-lg font-semibold text-navy">
                   <Award className="h-5 w-5 text-gold" /> Achievements
                 </div>
@@ -210,7 +211,7 @@ export default function CoachProfile() {
                 </ul>
               </div>
 
-              <div className="rounded-4xl border border-cream-dark bg-white p-6 shadow-card">
+              <div className="rounded-4xl border border-cream-dark bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-gold/20">
                 <div className="flex items-center gap-2 text-lg font-semibold text-navy">
                   <Clock3 className="h-5 w-5 text-gold" /> Skills & Languages
                 </div>
@@ -229,7 +230,7 @@ export default function CoachProfile() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-cream-dark bg-navy-gradient p-6 text-white shadow-card">
+            <div className="rounded-4xl border border-cream-dark bg-navy-gradient p-6 text-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(244,180,0,0.15)] hover:border-gold/20">
               <div className="flex items-center gap-2 text-lg font-semibold">
                 <Trophy className="h-5 w-5 text-gold" /> International Coaching Experience
               </div>

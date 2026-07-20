@@ -30,8 +30,8 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6, boxShadow: "0 16px 48px rgba(32,35,59,0.12)" }}
-              className="group relative bg-white rounded-2xl p-8 shadow-card border border-cream-dark cursor-default transition-shadow duration-300 overflow-hidden"
+              whileHover={{ y: -8, scale: 1.015, boxShadow: "0 16px 48px rgba(244, 180, 0, 0.15)" }}
+              className="group relative bg-white rounded-2xl p-8 shadow-card border border-cream-dark cursor-default transition-all duration-300 overflow-hidden"
             >
               {/* Hover accent */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gold-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-full" />

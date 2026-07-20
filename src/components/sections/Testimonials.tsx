@@ -79,8 +79,9 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-6">
             <motion.button
               onClick={prev}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 rounded-full border-2 border-navy/15 flex items-center justify-center text-navy/50 hover:border-gold hover:text-gold transition-colors"
+              className="w-10 h-10 rounded-full border-2 border-navy/15 flex items-center justify-center text-navy/50 hover:border-gold hover:text-gold transition-all duration-300"
             >
               <ChevronLeft className="w-5 h-5" />
             </motion.button>
@@ -95,8 +96,9 @@ export default function Testimonials() {
             </div>
             <motion.button
               onClick={next}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 rounded-full border-2 border-navy/15 flex items-center justify-center text-navy/50 hover:border-gold hover:text-gold transition-colors"
+              className="w-10 h-10 rounded-full border-2 border-navy/15 flex items-center justify-center text-navy/50 hover:border-gold hover:text-gold transition-all duration-300"
             >
               <ChevronRight className="w-5 h-5" />
             </motion.button>
@@ -111,9 +113,9 @@ export default function Testimonials() {
               onClick={() => setActive(i)}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4 }}
-              className={`text-left p-5 rounded-2xl border transition-all duration-200 ${
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6, scale: 1.015, boxShadow: "0 12px 28px rgba(244, 180, 0, 0.12)" }}
+              className={`text-left p-5 rounded-2xl border transition-all duration-300 ${
                 i === active
                   ? "bg-navy border-gold/30 shadow-gold-sm"
                   : "bg-cream border-cream-dark hover:border-navy/20"
