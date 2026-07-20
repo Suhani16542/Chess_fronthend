@@ -67,7 +67,7 @@ const international = [
 ];
 
 const contactItems = [
-  { label: "7358328783", icon: Phone, href: "tel:+917358328783" },
+  { label: "+91 7358328783", icon: Phone, href: "tel:+917358328783" },
   { label: "Sadasivam.maker@gmail.com", icon: Mail, href: "mailto:Sadasivam.maker@gmail.com" },
   { label: "Andhra Pradesh, India", icon: MapPin, href: "#" },
 ];

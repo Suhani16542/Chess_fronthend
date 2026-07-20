@@ -72,7 +72,7 @@ export default function BookDemo() {
     try {
       if (!isValidIndianMobile(form.phone)) {
         setShowPhoneValidation(true);
-        setErrorMessage("Please enter a valid 10-digit Indian mobile number starting with 6–9.");
+        setErrorMessage("Please enter a valid phone number with country code.");
         setIsSubmitting(false);
         return;
       }
@@ -216,7 +216,7 @@ export default function BookDemo() {
                           disabled={isSubmitting}
                         />
                         {showPhoneValidation && !isValidIndianMobile(form.phone) && (
-                          <p className="text-[11px] text-gold">Use a valid 10-digit Indian mobile number starting with 6–9.</p>
+                          <p className="text-[11px] text-gold">Please enter a valid phone number with country code.</p>
                         )}
                       </div>
                     </div>
