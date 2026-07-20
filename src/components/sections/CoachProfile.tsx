@@ -20,50 +20,49 @@ const experience = [
     title: "7 Hills Chess Academy",
     period: "2023 – Present",
     bullets: [
-      "Coaching 50+ students",
-      "Developed structured training programs",
+      "Coached 50+ students across different skill levels",
+      "Specialized in tournament preparation and tactical improvement",
       "Produced multiple FIDE-rated players (1500+)",
     ],
   },
   {
     title: "Upstep Chess Academy",
-    period: "2024 – Present",
+    period: "Previous Coach",
     bullets: [
       "Focused on serious tournament players",
-      "Advanced training in tactics and competition",
+      "Advanced training in tactics and openings preparation",
     ],
   },
   {
     title: "Bharathy Chess Academy",
-    period: "2018 – 2022",
+    period: "Previous Coach",
     bullets: [
       "Trained students across all skill levels",
-      "Organized tournaments",
-      "Served as chess arbiter",
+      "Structured training programs and tournament preparation",
     ],
   },
 ];
 
 const achievements = [
-  "Coached a player to 2nd place in the National Championship",
-  "Developed multiple FIDE-rated players (1500+)",
-  "Students won State and District Championships",
+  "Coached 50+ students across different skill levels",
+  "Produced multiple FIDE-rated players (1500+)",
+  "Students achieved State, District, and National-level success",
 ];
 
 const skills = [
+  "Tournament Preparation",
+  "Tactical Improvement",
+  "Opening Preparation",
+  "Structured Training Programs",
   "ChessBase",
   "Lichess",
-  "Swiss Manager",
-  "Chess Manager",
-  "Online Coaching",
-  "Tournament Preparation",
 ];
 
 const languages = ["English", "Tamil", "Telugu"];
 
 const international = [
-  "Coach – Indian Juvenile Girls Team (Asian Silver Medal – May 15, 2025)",
-  "Coach – Indian Team – World Cup",
+  "Coach – Indian Juvenile Girls Team (Asian Silver Medal – May 2025)",
+  "Coach – Indian Team at the World Cup",
 ];
 
 const contactItems = [
@@ -117,11 +116,16 @@ export default function CoachProfile() {
                 </div>
               </div>
 
-              <h3 className="font-display font-bold text-2xl text-navy">SADA SIVAM K</h3>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.28em] text-gold">Chess Coach & Mentor</p>
-              <p className="mt-5 text-sm leading-7 text-navy-muted">
-                Experienced chess coach with 7+ years of experience training competitive players and developing young talent into FIDE-rated players. Proven track record of producing national-level performers and coaching teams at international events.
-              </p>
+              <h3 className="font-display font-bold text-2xl text-navy">Sada Sivam K</h3>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.28em] text-gold">Professional Chess Coach & Mentor</p>
+              <div className="mt-5 text-sm leading-relaxed text-navy-muted space-y-4">
+                <p>
+                  Sada Sivam K is a professional chess coach with over 7 years of coaching experience, dedicated to developing confident and competitive players. He has trained 50+ students, guided multiple players to FIDE ratings (1500+), and specializes in tournament preparation, tactical mastery, opening strategy, and structured long-term improvement.
+                </p>
+                <p>
+                  As a coach for the Indian Juvenile Girls Team (Asian Silver Medalists) and the Indian Team at the World Cup, he combines international coaching experience with personalized mentoring. His students have earned recognition at State, District, National, and FIDE levels through disciplined training and modern coaching methods.
+                </p>
+              </div>
 
               <div className="mt-7 w-full space-y-3">
                 {contactItems.map(({ label, icon: Icon, href }) => (
@@ -147,30 +151,60 @@ export default function CoachProfile() {
             className="space-y-6"
           >
             <div className="rounded-4xl border border-cream-dark bg-white p-6 sm:p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-gold/20">
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 rounded-full bg-gold/10 px-3.5 py-2 text-sm font-semibold text-navy">
-                  <Briefcase className="h-4 w-4 text-gold" /> 7+ Years Experience
-                </div>
-                <div className="flex items-center gap-2 rounded-full bg-navy/6 px-3.5 py-2 text-sm font-semibold text-navy">
-                  <Trophy className="h-4 w-4 text-gold" /> National-Level Mentoring
-                </div>
-              </div>
-
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-navy">
-                    <Users className="h-4 w-4 text-gold" /> Coaching Experience
+              <h3 className="font-display font-bold text-lg text-navy mb-5 uppercase tracking-wider text-gradient-gold">Key Achievements & Stats</h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Briefcase className="h-4 w-4 text-gold shrink-0" />
+                    <span>7+ Years Experience</span>
                   </div>
-                  <p className="mt-2 text-sm text-navy-muted">
-                    Guided 50+ students and helped build structured training plans for growth.
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Professional coaching and chess mentoring.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-navy">
-                    <Globe2 className="h-4 w-4 text-gold" /> International Exposure
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Users className="h-4 w-4 text-gold shrink-0" />
+                    <span>50+ Students Mentored</span>
                   </div>
-                  <p className="mt-2 text-sm text-navy-muted">
-                    Coached national teams in Asian and World Cup-level events.
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Across different skill levels and age groups.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Award className="h-4 w-4 text-gold shrink-0" />
+                    <span>Multiple FIDE Rated Players</span>
+                  </div>
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Guided multiple players to 1500+ FIDE ratings.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Globe2 className="h-4 w-4 text-gold shrink-0" />
+                    <span>Indian Team Coach</span>
+                  </div>
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Coach for the Indian Team at the World Cup.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Trophy className="h-4 w-4 text-gold shrink-0" />
+                    <span>Asian Silver Medal Coach</span>
+                  </div>
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Indian Juvenile Girls Team Coach (Asian Silver Medal - May 2025).
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-cream-dark bg-cream/70 p-4 transition-all duration-300 hover:border-gold/30 hover:bg-cream/40">
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-navy">
+                    <Sparkles className="h-4 w-4 text-gold shrink-0" />
+                    <span>State, District & National Success</span>
+                  </div>
+                  <p className="mt-1 text-xs text-navy-muted">
+                    Students achieved honors at multiple competitive levels.
                   </p>
                 </div>
               </div>

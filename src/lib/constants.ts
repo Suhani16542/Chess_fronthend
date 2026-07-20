@@ -183,58 +183,58 @@ export const COACHES = [
 
 export const TESTIMONIALS = [
   {
-    name: "Rahul Mehta",
-    role: "Student, Age 16",
-    quote:
-      "My rating went from 800 to 1,450 in just seven months. GM Arjun's opening repertoire sessions completely transformed how I approach every game.",
+    name: "Ashwini",
+    role: "Parent of Aira",
+    quote: "Thank you for being so patient with Aira. Your teaching style is wonderful, and she truly enjoys learning from you. Even when chess feels stressful, she wants to continue because she loves being coached by you.",
     rating: 5,
-    achievement: "Rating +650 in 7 months",
-    initials: "RM",
+    achievement: "A student who loves learning chess.",
+    initials: "AS",
+    title: "❤️ A Parent's Words That Made Our Day",
+  },
+  {
+    name: "Parent of Annika",
+    role: "Parent Feedback",
+    quote: "After her vaccination, when Annika regained consciousness, she kept asking for her dad and for Sada Sir. That moment made us realize how much you mean to her. Thank you for being such an important part of her journey.",
+    rating: 5,
+    achievement: "More than a Coach.",
+    initials: "PA",
+    title: "💛 A Bond Beyond Chess",
   },
   {
     name: "Sunita Krishnan",
-    role: "Parent of 10-year-old",
-    quote:
-      "My daughter went from a complete beginner to winning her school championship. The coaches here are incredibly patient and inspiring.",
+    role: "Parent of 10-year-old Kabir",
+    quote: "My son's concentration during games has dramatically improved since he started training here. The structured opening preparation and tactical analysis helped him win his first school championship with a clean sheet.",
     rating: 5,
     achievement: "School Champion 2024",
     initials: "SK",
+    title: "📈 Tournament Confidence & Strategy",
   },
   {
     name: "Arjun Kapoor",
-    role: "Student, Age 22",
-    quote:
-      "Won my first district-level tournament three months after joining. The tournament prep modules are absolutely world-class.",
+    role: "Advanced Student, Age 21",
+    quote: "As an intermediate player, I was stuck at a plateau for almost a year. The deep-dive endgame masterclasses and personalized homework plans helped me break through and gain over 200 rating points.",
     rating: 5,
-    achievement: "District Champion",
+    achievement: "Rating +210 in 6 months",
     initials: "AK",
+    title: "🏆 FIDE Rating Milestones",
   },
   {
     name: "Kavya Reddy",
-    role: "Student, Age 14",
-    quote:
-      "I've tried many platforms but ChessMaster is on a completely different level. IM Priya's endgame lessons are pure gold.",
+    role: "Parent of 12-year-old Ananya",
+    quote: "Chess has done wonders for my daughter's analytical skills. She is much more patient and methodical with her schoolwork now. The friendly and highly motivating learning environment keeps her excited for every single session.",
     rating: 5,
-    achievement: "State Top 10",
+    achievement: "Academic & Focus Boost",
     initials: "KR",
+    title: "🧠 Strategic Thinking in Academics",
   },
   {
     name: "Deepak Joshi",
     role: "Working Professional, Age 35",
-    quote:
-      "The flexible scheduling is a lifesaver. I fit sessions around my work calendar and have improved more than I ever expected.",
+    quote: "Balancing a demanding job with my passion for chess was difficult. The flexible scheduling and structured curriculum allow me to study complex tactical ideas at my own pace. The coaching is top-notch.",
     rating: 5,
-    achievement: "Club rating 1800+",
+    achievement: "Club Rating 1800+",
     initials: "DJ",
-  },
-  {
-    name: "Meera Iyer",
-    role: "Student, Age 12",
-    quote:
-      "The daily puzzles and recorded sessions make revision so easy. I genuinely look forward to every single class.",
-    rating: 5,
-    achievement: "National Junior Qualifier",
-    initials: "MI",
+    title: "⏰ Structured Training for Professionals",
   },
 ] as const;
 

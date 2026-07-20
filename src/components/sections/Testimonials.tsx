@@ -47,26 +47,35 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="bg-navy-gradient rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden"
+              className="bg-navy-gradient rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(244,180,0,0.15)]"
             >
               <div className="absolute inset-0 chess-pattern-dark opacity-40" />
               <div className="relative z-10">
-                <Quote className="w-10 h-10 text-gold/50 mb-6" />
-                <p className="text-white/90 text-lg sm:text-xl leading-relaxed font-medium mb-8">
+                <div className="flex items-start justify-between mb-4">
+                  <Quote className="w-10 h-10 text-gold/40" />
+                </div>
+                
+                {TESTIMONIALS[active].title && (
+                  <h3 className="text-gold font-display font-bold text-lg sm:text-xl md:text-2xl mb-3 leading-tight">
+                    {TESTIMONIALS[active].title}
+                  </h3>
+                )}
+
+                <p className="text-white/90 text-base sm:text-lg leading-relaxed font-sans mb-8">
                   &ldquo;{TESTIMONIALS[active].quote}&rdquo;
                 </p>
-                <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-white/10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center font-display font-black text-gold">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 border-2 border-gold/45 flex items-center justify-center font-display font-black text-gold text-lg shadow-inner shadow-gold/10">
                       {TESTIMONIALS[active].initials}
                     </div>
                     <div>
-                      <p className="text-white font-bold">{TESTIMONIALS[active].name}</p>
-                      <p className="text-white/55 text-sm">{TESTIMONIALS[active].role}</p>
+                      <p className="text-white font-bold text-base">{TESTIMONIALS[active].name}</p>
+                      <p className="text-white/55 text-sm mb-1">{TESTIMONIALS[active].role}</p>
                       <StarRating rating={TESTIMONIALS[active].rating} />
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/25">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-gold/25 to-gold/10 border border-gold/30 shadow-[0_2px_10px_rgba(244,180,0,0.05)]">
                     <Trophy className="w-4 h-4 text-gold" />
                     <span className="text-gold text-xs font-semibold">{TESTIMONIALS[active].achievement}</span>
                   </div>
@@ -114,15 +123,17 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6, scale: 1.015, boxShadow: "0 12px 28px rgba(244, 180, 0, 0.12)" }}
-              className={`text-left p-5 rounded-2xl border transition-all duration-300 ${
+              whileHover={{ y: -6, scale: 1.015 }}
+              className={`text-left p-5 rounded-2xl border transition-all duration-300 cursor-pointer ${
                 i === active
-                  ? "bg-navy border-gold/30 shadow-gold-sm"
-                  : "bg-cream border-cream-dark hover:border-navy/20"
+                  ? "bg-gradient-to-br from-navy-dark to-navy border-gold/40 shadow-[0_10px_25px_-5px_rgba(244,180,0,0.2)]"
+                  : "bg-white/90 backdrop-blur-sm border-cream-dark hover:border-gold/30 hover:bg-cream/40 shadow-sm hover:shadow-[0_12px_24px_-6px_rgba(32,35,59,0.06)]"
               }`}
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${i === active ? "bg-gold text-navy" : "bg-navy/10 text-navy"}`}>
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-colors duration-300 ${
+                  i === active ? "bg-gradient-to-br from-gold to-gold-dark text-navy" : "bg-navy/10 text-navy"
+                }`}>
                   {t.initials}
                 </div>
                 <div>
@@ -130,9 +141,27 @@ export default function Testimonials() {
                   <p className={`text-xs ${i === active ? "text-white/55" : "text-navy/50"}`}>{t.role}</p>
                 </div>
               </div>
+
+              {t.title && (
+                <p className={`text-xs font-bold mb-1 tracking-wide ${i === active ? "text-gold" : "text-gold-dark"}`}>
+                  {t.title}
+                </p>
+              )}
+
               <p className={`text-xs leading-relaxed line-clamp-2 ${i === active ? "text-white/70" : "text-navy/60"}`}>
                 &ldquo;{t.quote}&rdquo;
               </p>
+
+              <div className={`mt-3 pt-3 border-t flex items-center justify-between ${
+                i === active ? "border-white/10" : "border-navy/5"
+              }`}>
+                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                  i === active ? "bg-gold/15 text-gold border border-gold/25" : "bg-navy/5 text-navy/70 border border-navy/10"
+                }`}>
+                  {t.achievement}
+                </span>
+                <span className="text-[10px] text-gold font-bold">★ 5.0</span>
+              </div>
             </motion.button>
           ))}
         </div>
