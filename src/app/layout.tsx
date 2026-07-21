@@ -19,32 +19,31 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: {
-    default: "ChessMaster Academy – Learn Chess from Grandmasters",
-    template: "%s | ChessMaster Academy",
+    default: "Sada's Chess Academy – Learn Chess with FIDE-Rated Coaches",
+    template: "%s | Sada's Chess Academy",
   },
   description:
-    "India's premier chess academy. Learn chess from FIDE-rated Grandmasters and International Masters with personalised, structured programs for all skill levels.",
+    "Sada's Chess Academy provides structured coaching from experienced FIDE-rated coaches, personalised training, and tournament-focused development.",
   keywords: [
     "chess academy",
     "learn chess",
-    "grandmaster coaching",
+    "FIDE rated coach",
     "chess classes online",
     "chess training India",
-    "FIDE rated coach",
     "chess for beginners",
     "chess tournament prep",
   ],
   openGraph: {
     type: "website",
-    siteName: "ChessMaster Academy",
-    title: "ChessMaster Academy – Learn Chess from Grandmasters",
+    siteName: "Sada's Chess Academy",
+    title: "Sada's Chess Academy – Learn Chess with FIDE-Rated Coaches",
     description:
-      "India's premier chess academy. Personalised programs taught by FIDE-rated Grandmasters.",
+      "Sada's Chess Academy provides structured coaching from experienced FIDE-rated coaches and tournament-focused training.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ChessMaster Academy",
-    description: "Learn chess from Grandmasters. Book your free demo today.",
+    title: "Sada's Chess Academy",
+    description: "Structured coaching with experienced FIDE-rated coaches. Book your free demo today.",
   },
   robots: { index: true, follow: true },
 };

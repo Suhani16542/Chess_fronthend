@@ -110,7 +110,7 @@ export default function HeroSection() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/12 border border-gold/25 text-xs font-semibold text-gold tracking-widest uppercase">
                 <Star className="w-3.5 h-3.5 fill-gold" />
-                India&apos;s #1 Rated Chess Academy
+                Sada&apos;s Chess Academy
               </span>
             </motion.div>
 
@@ -135,9 +135,7 @@ export default function HeroSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Learn from FIDE-rated Grandmasters through personalised, structured
-              programs — designed to transform complete beginners into confident,
-              competitive chess players.
+              Learn from experienced International FIDE-Rated Coaches through personalised, structured coaching designed to help every student improve with confidence.
             </motion.p>
 
             {/* CTAs */}
@@ -169,7 +167,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <Play className="w-4 h-4 fill-current" /> Meet Our GMs
+                <Play className="w-4 h-4 fill-current" /> Meet Our International FIDE-Rated Coaches
               </motion.a>
             </motion.div>
 
@@ -235,22 +233,22 @@ export default function HeroSection() {
             {/* Floating cards */}
             <FloatingCard
               icon={Trophy}
-              label="Tournaments Won"
-              value="500+"
+              label="Tournament-Focused Training"
+              value="Tournament"
               delay={0.6}
               className="-top-4 -right-4 sm:right-[-2.5rem]"
             />
             <FloatingCard
               icon={TrendingUp}
-              label="Avg. Rating Gain"
-              value="+320 pts"
+              label="FIDE Player Development"
+              value="FIDE"
               delay={0.8}
               className="bottom-12 -left-4 sm:left-[-2.5rem]"
             />
             <FloatingCard
               icon={Users}
-              label="Active Students"
-              value="2,500+"
+              label="Personalized Coaching"
+              value="Personalized"
               delay={1.0}
               className="top-[40%] -right-6 sm:right-[-3rem]"
             />

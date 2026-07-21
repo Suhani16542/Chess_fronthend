@@ -3,10 +3,10 @@
 // ─────────────────────────────────────────────
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-export const SITE_NAME = "ChessMaster Academy";
+export const SITE_NAME = "Sada's Chess Academy";
 export const SITE_TAGLINE = "Master the Game. Master Life.";
 export const SITE_DESCRIPTION =
-  "India's premier chess academy — learn from FIDE-rated Grandmasters with personalised, structured programs for all levels.";
+  "Sada's Chess Academy offers personalised coaching from experienced international FIDE-rated coaches, structured programs, and tournament-focused training.";
 
 // ── Navigation ──────────────────────────────────────────────────────────────
 
@@ -23,9 +23,9 @@ export const NAV_LINKS = [
 // ── Hero Stats ──────────────────────────────────────────────────────────────
 
 export const HERO_STATS = [
-  { value: "2,500+", label: "Students Enrolled" },
-  { value: "50+",    label: "Expert Coaches"    },
-  { value: "98%",    label: "Success Rate"      },
+  { value: "7+",    label: "Years of Coaching" },
+  { value: "50+",   label: "Students Mentored" },
+  { value: "International", label: "Coaching Experience" },
 ] as const;
 
 // ── Trusted Logos (text representations) ───────────────────────────────────
