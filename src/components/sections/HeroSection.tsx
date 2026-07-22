@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Star, Trophy, Users } from "lucide-react";
-import { HERO_STATS } from "@/lib/constants";
+
 
 // ── Chess King SVG ──────────────────────────────────────────────────────────
 function ChessKingSVG({ className }: { className?: string }) {
@@ -107,10 +107,15 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
+              className="flex flex-col sm:flex-row flex-wrap gap-3 items-start sm:items-center"
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/12 border border-gold/25 text-xs font-semibold text-gold tracking-widest uppercase">
                 <Star className="w-3.5 h-3.5 fill-gold" />
                 Sada&apos;s Chess Academy
+              </span>
+              <span className="inline-flex items-center gap-2 px-4.5 py-2 rounded-full bg-gradient-to-r from-gold/20 via-gold/10 to-white/5 border border-gold/30 shadow-[0_8px_30px_rgba(244,180,0,0.1)] backdrop-blur-sm text-xs font-bold text-navy">
+                <Trophy className="w-3.5 h-3.5 text-gold fill-gold/20 shrink-0" strokeWidth={2.5} />
+                🏆 1st as Coach of India Girls Juvenile Team
               </span>
             </motion.div>
 
@@ -149,22 +154,7 @@ export default function HeroSection() {
               </motion.a>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              className="flex flex-wrap items-center gap-x-10 gap-y-5 pt-4"
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.45 }}
-            >
-              {HERO_STATS.map((s, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="font-display font-black text-3xl text-navy leading-none">
-                    {s.value}
-                  </span>
-                  <span className="text-navy/55 text-sm mt-1">{s.label}</span>
-                </div>
-              ))}
-            </motion.div>
+
           </div>
 
           {/* ── RIGHT — Chess Visual ── */}
@@ -227,15 +217,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-px h-12 bg-gradient-to-b from-transparent to-navy/30" />
-        <p className="text-navy/40 text-xs tracking-widest uppercase">Scroll</p>
-      </motion.div>
+
     </section>
   );
 }
