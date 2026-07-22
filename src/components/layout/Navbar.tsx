@@ -37,7 +37,11 @@ export default function Navbar() {
     setMenuOpen(false);
     setActive(href.replace("#", ""));
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/" + href;
+    }
   };
 
   return (

@@ -342,10 +342,7 @@ export const FAQ_ITEMS = [
 export const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
 export const SOCIAL_LINKS = {
-  twitter:   "https://twitter.com/",
-  instagram: "https://instagram.com/",
-  youtube:   "https://youtube.com/",
-  linkedin:  "https://linkedin.com/",
+  instagram: "https://www.instagram.com/sadasivam_k_b?igsh=MW96OHN4OGxqZm05ag==",
 } as const;
 
 // ── Breakpoints (mirrors Tailwind defaults) ──────────────────────────────────

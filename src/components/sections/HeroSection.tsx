@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Star, Trophy, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Star, Trophy, Users } from "lucide-react";
 import { HERO_STATS } from "@/lib/constants";
 
 // ── Chess King SVG ──────────────────────────────────────────────────────────
@@ -215,13 +215,6 @@ export default function HeroSection() {
               value="Tournament"
               delay={0.6}
               className="-top-4 -right-4 sm:right-[-2.5rem]"
-            />
-            <FloatingCard
-              icon={TrendingUp}
-              label="FIDE Player Development"
-              value="FIDE"
-              delay={0.8}
-              className="bottom-12 -left-4 sm:left-[-2.5rem]"
             />
             <FloatingCard
               icon={Users}
