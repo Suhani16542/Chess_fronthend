@@ -9,12 +9,14 @@ const TIMES = ["Morning (7am–11am)", "Afternoon (12pm–4pm)", "Evening (5pm�
 
 const normalizeIndianMobile = (value: string) => {
   const digitsOnly = value.replace(/\D/g, "");
-  const withoutCountryCode = digitsOnly.startsWith("91") ? digitsOnly.slice(2) : digitsOnly;
-  const compactDigits = withoutCountryCode.slice(0, 10);
-  return compactDigits ? `+91${compactDigits}` : "+91";
+  let digits = digitsOnly;
+  if (digits.length > 10 && digits.startsWith("91")) {
+    digits = digits.slice(2);
+  }
+  return digits.slice(0, 10);
 };
 
-const isValidIndianMobile = (value: string) => /^\+91[6-9]\d{9}$/.test(value);
+const isValidIndianMobile = (value: string) => /^[6-9]\d{9}$/.test(value);
 
 export default function BookDemo() {
   const ref = useRef(null);
@@ -27,7 +29,7 @@ export default function BookDemo() {
     studentName: "",
     parentName: "",
     email: "",
-    phone: "+91",
+    phone: "",
     age: "",
     city: "",
     chessExperience: "",
@@ -55,7 +57,7 @@ export default function BookDemo() {
       studentName: "",
       parentName: "",
       email: "",
-      phone: "+91",
+      phone: "",
       age: "",
       city: "",
       chessExperience: "",
@@ -72,7 +74,7 @@ export default function BookDemo() {
     try {
       if (!isValidIndianMobile(form.phone)) {
         setShowPhoneValidation(true);
-        setErrorMessage("Please enter a valid phone number with country code.");
+        setErrorMessage("Please enter a valid 10-digit Indian mobile number.");
         setIsSubmitting(false);
         return;
       }
@@ -206,9 +208,9 @@ export default function BookDemo() {
                           name="phone"
                           type="tel"
                           required
-                          maxLength={13}
+                          maxLength={15}
                           inputMode="numeric"
-                          placeholder="+91 98765 43210"
+                          placeholder="Enter your 10-digit mobile number"
                           value={form.phone}
                           onChange={handlePhoneChange}
                           onFocus={handlePhoneFocus}
@@ -216,7 +218,7 @@ export default function BookDemo() {
                           disabled={isSubmitting}
                         />
                         {showPhoneValidation && !isValidIndianMobile(form.phone) && (
-                          <p className="text-[11px] text-gold">Please enter a valid phone number with country code.</p>
+                          <p className="text-[11px] text-gold">Please enter a valid 10-digit Indian mobile number.</p>
                         )}
                       </div>
                     </div>

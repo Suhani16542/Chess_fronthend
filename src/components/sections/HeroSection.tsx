@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Play, Star, Trophy, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Star, Trophy, TrendingUp, Users } from "lucide-react";
 import { HERO_STATS } from "@/lib/constants";
 
 // ── Chess King SVG ──────────────────────────────────────────────────────────
@@ -128,16 +128,6 @@ export default function HeroSection() {
               </h1>
             </motion.div>
 
-            {/* Description */}
-            <motion.p
-              className="text-navy/65 text-lg leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Learn from experienced International FIDE-Rated Coaches through personalised, structured coaching designed to help every student improve with confidence.
-            </motion.p>
-
             {/* CTAs */}
             <motion.div
               className="flex flex-wrap gap-4"
@@ -156,18 +146,6 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.97 }}
               >
                 Book Free Demo <ArrowRight className="w-4 h-4" />
-              </motion.a>
-              <motion.a
-                href="#coaches"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#coaches")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-navy/20 text-navy font-semibold text-base hover:border-navy hover:bg-navy hover:text-white transition-all duration-300 bg-white/60 backdrop-blur-sm"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Play className="w-4 h-4 fill-current" /> Meet Our International FIDE-Rated Coaches
               </motion.a>
             </motion.div>
 
